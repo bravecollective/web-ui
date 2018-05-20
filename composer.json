@@ -1,0 +1,8 @@
+{
+    "name": "bravecollective/web-ui",
+    "extra": {
+        "assets-files": [
+            "dist"
+        ]
+    }
+}
