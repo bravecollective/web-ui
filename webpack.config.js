@@ -35,7 +35,8 @@ module.exports = (env, argv) => ({
     },
     plugins: [
         new CopyWebpackPlugin([
-            { from: './node_modules/daemonite-material/js/material.min.js', to: 'js/' }
+            { from: './node_modules/daemonite-material/js/material.min.js', to: 'js/' },
+            { from: './node_modules/daemonite-material/js/material.min.js.map', to: 'js/' },
         ])
     ],
     optimization: {
