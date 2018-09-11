@@ -1,12 +1,14 @@
-const devMode = process.env.NODE_ENV !== 'production'
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
-module.exports = [{
+module.exports = (env, argv) => ({
     entry: './sass/brave.scss',
     output: {
         // This is necessary for webpack to compile
         // But we never use style-bundle.js
         filename: 'style-bundle.js',
+        path: path.resolve(__dirname, './dist'),
     },
     module: {
         rules: [{
@@ -20,7 +22,7 @@ module.exports = [{
                 },
                 { loader: 'extract-loader' },
                 { loader: 'css-loader' },
-                { 
+                {
                     loader: 'sass-loader',
                     options: {
                         includePaths: [
@@ -31,9 +33,17 @@ module.exports = [{
             ]
         }]
     },
+    plugins: [
+        new CopyWebpackPlugin([
+            { from: './node_modules/daemonite-material/js/material.min.js', to: 'js/' },
+            { from: './node_modules/daemonite-material/js/material.min.js.map', to: 'js/' },
+        ])
+    ],
     optimization: {
         minimizer: [
-            new OptimizeCSSAssetsPlugin({})
+            new OptimizeCSSAssetsPlugin({
+                cssProcessorOptions: { safe: true },
+            })
         ]
     },
-}];
+});
