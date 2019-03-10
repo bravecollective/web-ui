@@ -37,6 +37,15 @@ module.exports = (env, argv) => ({
         new CopyWebpackPlugin([
             { from: './node_modules/daemonite-material/js/material.min.js', to: 'js/' },
             { from: './node_modules/daemonite-material/js/material.min.js.map', to: 'js/' },
+            { from: './node_modules/jquery/dist/jquery.slim.min.js', to: 'js/jquery.slim.min.js' },
+            { from: './node_modules/jquery/dist/jquery.slim.min.map', to: 'js/jquery.slim.min.map' },
+            { from: './node_modules/jquery/dist/jquery.min.js', to: 'js/jquery.min.js' },
+            { from: './node_modules/jquery/dist/jquery.min.map', to: 'js/jquery.min.map' },
+            { from: './node_modules/popper.js/dist/umd/popper.min.js', to: 'js/popper.min.js' },
+            { from: './node_modules/popper.js/dist/umd/popper.min.js.map', to: 'js/popper.min.js.map' },
+            { from: './node_modules/pickadate/lib/compressed', to: 'pickadate' },
+            { from: './node_modules/bootstrap/dist/js/bootstrap.min.js', to: 'js/bootstrap.min.js' },
+            { from: './node_modules/bootstrap/dist/js/bootstrap.min.js.map', to: 'js/bootstrap.min.js.map' },
         ])
     ],
     optimization: {

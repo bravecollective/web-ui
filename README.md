@@ -1,3 +1,7 @@
 
 Build:
-`yarn webpack --mode production`
+
+```
+yarn install
+yarn webpack --mode production
+```

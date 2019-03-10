@@ -4,7 +4,8 @@
         "assets-files": [
             "dist/images",
             "dist/css",
-            "dist/js"
+            "dist/js",
+            "dist/pickadate"
         ]
     }
 }
