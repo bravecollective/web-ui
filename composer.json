@@ -1,5 +1,6 @@
 {
     "name": "bravecollective/web-ui",
+    "license": "MIT",
     "extra": {
         "assets-files": [
             "dist/images",
