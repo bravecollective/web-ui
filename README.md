@@ -6,6 +6,8 @@ yarn install
 yarn webpack --mode production
 ```
 
+Include `https://fonts.googleapis.com/icon?family=Material+Icons` to use icons.
+
 ## Changelog
 
 2019-08-23
